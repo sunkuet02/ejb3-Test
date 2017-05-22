@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<weblogic-webservices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-webservices
+                      http://www.bea.com/ns/weblogic/weblogic-webservices/1.0/weblogic-webservices.xsd
+                      http://www.bea.com/ns/weblogic/weblogic-webservices "
+                      xmlns="http://www.bea.com/ns/weblogic/weblogic-webservices">
+    <webservice-description>
+        <webservice-description-name>
+            BankingWService
+        </webservice-description-name>
+        <webservice-type>JAXWS</webservice-type>
+        <port-component>
+            <port-component-name>BankingServicePort</port-component-name>
+            <service-endpoint-address>
+                <webservice-contextpath>/bankingservice</webservice-contextpath>
+                <webservice-serviceuri>/BankingWS</webservice-serviceuri>
+            </service-endpoint-address>
+            <wsdl>
+                <exposed>true</exposed>
+            </wsdl>
+        </port-component>
+    </webservice-description>
+
+</weblogic-webservices>

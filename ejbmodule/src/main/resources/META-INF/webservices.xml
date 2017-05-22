@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webservices xmlns="http://java.sun.com/xml/ns/javaee"
+             version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+             http://java.sun.com/xml/ns/javaee/javaee_web_services_1_3.xsd">
+    <webservice-description>
+        <webservice-description-name>BankingWService</webservice-description-name>
+        <port-component>
+            <port-component-name>BankingServicePort</port-component-name>
+            <wsdl-port xmlns:ws="http://bean.webservice.testejb.sunkuet02.com/">
+                ws:BankingServicePort
+            </wsdl-port>
+            <service-endpoint-interface>
+                com.sunkuet02.testejb.webservice.bean.BankingWService
+            </service-endpoint-interface>
+            <service-impl-bean>
+                <ejb-link>BankingWS</ejb-link>
+            </service-impl-bean>
+        </port-component>
+    </webservice-description>
+
+</webservices>

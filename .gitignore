@@ -1,0 +1,5 @@
+.idea/
+ejbmodule/ejbmodule.iml
+ejbmodule-ear/ejbmodule-ear.iml
+TestingEJB.iml
+target/
