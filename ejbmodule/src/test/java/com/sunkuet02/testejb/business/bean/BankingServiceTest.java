@@ -43,14 +43,14 @@ public class BankingServiceTest {
 
     @Test
     public void login() throws Exception {
-        User user = new User("sun", "sunkuet02", "sunkuet02");
+        User user = new User("Shibli", "shibli", "shibli");
 
         user = bankingService.addUser(user);
 
         assertTrue(user.getId() > 0);
 
-        assertEquals(true, bankingService.login("sunkuet02", "sunkuet02"));
-        assertEquals(false, bankingService.login("sunkuet02", "sunkuet"));
+        assertEquals(true, bankingService.login("shibli", "shibli"));
+        assertEquals(false, bankingService.login("shibli", "shibli12"));
     }
 
 }

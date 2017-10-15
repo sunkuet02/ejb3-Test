@@ -9,6 +9,7 @@ import java.util.List;
  */
 
 @Entity
+@Table(name = "USER_INFO")
 public class User implements Serializable{
 
     @Id
@@ -23,7 +24,8 @@ public class User implements Serializable{
 
     String password;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "USER_ACCOUNTS",joinColumns = {@JoinColumn(name = "USER_ID")}, inverseJoinColumns = {@JoinColumn(name = "ACCOUNT_ID")})
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Account> account;
 
     public User(String name, String username, String password) {

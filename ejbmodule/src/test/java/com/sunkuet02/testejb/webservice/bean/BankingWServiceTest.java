@@ -41,6 +41,7 @@ public class BankingWServiceTest {
             container.close();
         }
     }
+
     @Test
     public void login() throws Exception {
         AddUserRequest addUserRequest = new AddUserRequest("sun", "sunkuet02", "sunkuet02");

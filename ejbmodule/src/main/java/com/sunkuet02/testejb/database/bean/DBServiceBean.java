@@ -44,7 +44,7 @@ public class DBServiceBean implements DBService {
         Query query = entityManager.createQuery("select u from User u where u.username = :username");
         query.setParameter("username", username);
 
-        List<User> users =  query.getResultList();
+        List<User> users =  (List<User>)query.getResultList();
 
         return users.size() == 0 ? null: users.get(0);
     }
@@ -56,8 +56,8 @@ public class DBServiceBean implements DBService {
     }
 
     public List<Account> getAccountByUserId(Long userId) {
-        Query query = entityManager.createQuery("select a from Account a where a.id = :id");
-        query.setParameter("id", userId);
+        Query query = entityManager.createNativeQuery("select * from ACCOUNT_INFO a where a.ACCOUNT_ID in (select ua.account_id from USER_ACCOUNTS ua where ua.user_id=?1)", Account.class);
+        query.setParameter("1", userId);
         return query.getResultList();
     }
 }

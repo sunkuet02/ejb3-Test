@@ -44,20 +44,19 @@ public class DBServiceTest {
 
     @Test
     public void persist() throws Exception {
-        User user = new User("Sun", "sunkuet02", "sunkuet02");
+        User user = new User("Alauddin", "Alauddin", "Alauddin");
         Account account = new Account("Dbbl", "123.123.123");
 
         List<Account> accountList = new ArrayList<Account>();
+        accountList.add(account);
         user.setAccount(accountList);
 
-        account = dbService.addAccount(account);
         user = (User)dbService.persist(user);
 
         assertTrue(user.getId() > 0);
-        assertTrue(account.getId() > 0);
-        assertEquals(1, dbService.getAllUser().size());
+        assertTrue(user.getAccount().get(0).getId() > 0);
 
-        assertEquals(1, dbService.getAccountByUserId(user.getId()).size());
+        assertEquals("Dbbl", dbService.getAccountByUserId(user.getId()).get(0).getAccountName());
     }
 
 }

@@ -7,6 +7,7 @@ import java.io.Serializable;
  * Created by sun on 5/17/17.
  */
 @Entity
+@Table(name = "ACCOUNT_INFO")
 public class Account implements Serializable {
 
     @Id
